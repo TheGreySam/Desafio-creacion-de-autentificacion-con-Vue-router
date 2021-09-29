@@ -1,20 +1,17 @@
+import '@babel/polyfill'
+import 'mutationobserver-shim'
 import Vue from "vue";
+import './plugins/bootstrap-vue'
 import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 
-import Firebase from "";
+import Firebase from "firebase";
+import { firebaseConfig } from "../firebase-config";
 
-Firebase.initialization({
-  apiKey: process.env.FIREBASE_APIKEY,
-    authDomain: process.env.FIREBASE_,
-    projectId: process.env.FIREBASE_,
-    storageBucket: process.env.FIREBASE_,
-    messagingSenderId: process.env.FIREBASE_,
-    appId: process.env.FIREBASE_
+Firebase.initializeApp(firebaseConfig)
 
-})
 
 
 
